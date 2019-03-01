@@ -1,28 +1,12 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ShoppingService} from '../../services/shopping.service';
-import {Subscription} from 'rxjs';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class HeaderComponent {
 
-  private itemsCountSubscription: Subscription;
-  private itemsCount: number;
-
-  constructor(private shoppingService: ShoppingService) {
+  constructor() {
   }
-
-  ngOnInit() {
-    this.itemsCountSubscription = this.shoppingService.itemsCount$.subscribe((count) => {
-      this.itemsCount = count;
-    });
-  }
-
-  ngOnDestroy() {
-    this.itemsCountSubscription.unsubscribe();
-  }
-
 }

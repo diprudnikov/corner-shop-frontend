@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {ShoppingService} from '../../core/services/shopping.service';
 import {HttpClient} from '@angular/common/http';
+import {Product} from '../../core/interfaces/Product';
 
 @Component({
   selector: 'app-list-item',
@@ -9,7 +10,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ListItemComponent {
 
-  @Input() product: any;
+  @Input() product: Product;
 
   constructor(private http: HttpClient, private shoppingService: ShoppingService) {
   }

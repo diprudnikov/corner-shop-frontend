@@ -5,12 +5,11 @@ import {ShoppingListComponent} from './shopping-list/shopping-list.component';
 import {CartComponent} from './cart/cart.component';
 import {CheckoutComponent} from './cart/checkout/checkout.component';
 import {PageNotFoundComponent} from './core/components/page-not-found/page-not-found.component';
-import {CheckoutGuard} from './cart/checkout/checkout.guard';
 
 const appRoutes: Routes = [
   {path: 'products', component: ShoppingListComponent},
   {path: 'cart', component: CartComponent},
-  {path: 'checkout', component: CheckoutComponent, canActivate: [CheckoutGuard]},
+  {path: 'checkout', component: CheckoutComponent},
   {path: '', redirectTo: '/products', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent}
 ];

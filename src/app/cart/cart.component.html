@@ -1,6 +1,6 @@
-<div *ngFor="let item of products" class="cart-item">
-  <p>Name: {{item.name}}</p>
-  <p>Price: {{+item.price | currency}}</p>
+<div *ngFor="let item of (cart$ | async)" class="cart-item">
+  <p>Name: {{item.product.name}}</p>
+  <p>Price: {{+item.product.price | currency}}</p>
 </div>
 
 <a routerLink="/checkout" routerLinkActive="active">Checkout</a>
