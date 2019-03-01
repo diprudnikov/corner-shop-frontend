@@ -1,0 +1,6 @@
+<div *ngFor="let item of checkout.products" class="cart-item">
+  <p>{{item.isImported ? '1 imported ' + item.name : item.name}}: {{+item.totalPrice | currency}}</p>
+</div>
+
+<p>Sales taxes: {{checkout.totalTax | currency}}</p>
+<p>Total: {{checkout.totalSum | currency}}</p>

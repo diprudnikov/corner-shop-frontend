@@ -1,0 +1,6 @@
+<div>
+  <span>{{product.name}}</span>
+  <span>{{product.price | currency}}</span>
+  <button (click)="add(product.id)">Add to cart</button>
+  <button (click)="remove(product.id)">Remove</button>
+</div>
