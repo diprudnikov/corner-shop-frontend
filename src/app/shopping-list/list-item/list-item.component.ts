@@ -16,10 +16,10 @@ export class ListItemComponent {
   }
 
   add(itemId: number) {
-    this.shoppingService.addProductToCart(itemId);
+    this.shoppingService.addProductToCart(itemId).subscribe();
   }
 
   remove(itemId: number) {
-    this.shoppingService.removeProductFromCart(itemId);
+    this.shoppingService.removeProductFromCart(itemId).subscribe();
   }
 }

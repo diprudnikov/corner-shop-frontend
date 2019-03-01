@@ -23,13 +23,13 @@ export class ShoppingService {
     return this.http.get<Product[]>(URLS.PRODUCTS, httpOptions);
   }
 
-  public addProductToCart(itemId: number): void {
+  public addProductToCart(itemId: number): Observable<Product> {
     const body = { itemId };
-    this.http.post(URLS.CART, body, httpOptions).subscribe();
+    return this.http.post<Product>(URLS.CART, body, httpOptions);
   }
 
-  public removeProductFromCart(itemId: number): void {
-    this.http.delete(`${URLS.CART}/${itemId}`, httpOptions).subscribe();
+  public removeProductFromCart(itemId: number): Observable<unknown> {
+    return this.http.delete(`${URLS.CART}/${itemId}`, httpOptions);
   }
 
   public getCart(): Observable<Product[]> {
