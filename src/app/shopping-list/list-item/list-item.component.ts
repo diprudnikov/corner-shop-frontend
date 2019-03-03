@@ -9,7 +9,6 @@ import {Product} from '../../core/interfaces/Product';
   styleUrls: ['./list-item.component.css']
 })
 export class ListItemComponent {
-
   @Input() product: Product;
 
   constructor(private http: HttpClient, private shoppingService: ShoppingService) {
@@ -17,9 +16,5 @@ export class ListItemComponent {
 
   add(itemId: number) {
     this.shoppingService.addProductToCart(itemId).subscribe();
-  }
-
-  remove(itemId: number) {
-    this.shoppingService.removeProductFromCart(itemId).subscribe();
   }
 }

@@ -1,6 +1,8 @@
-<div *ngFor="let item of (cart$ | async)" class="cart-item">
-  <p>{{item.product.name}}</p>
-  <p>{{+item.product.price | currency}}</p>
-</div>
-
-<a routerLink="/checkout" routerLinkActive="active">Checkout</a>
+<ng-container *ngIf="cart$ | async as cart">
+  <div *ngFor="let item of (cart$ | async)" class="cart-item">
+    <p>1 {{item.isImported ? 'imported ' + item.name : item.name}}</p>
+    <p>{{+item.price | currency}}</p>
+    <button (click)="deleteFromCart(item.id)">Remove</button>
+  </div>
+  <a *ngIf="cart.length" routerLink="/checkout" routerLinkActive="active">Checkout</a>
+</ng-container>

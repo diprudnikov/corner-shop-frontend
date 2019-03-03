@@ -1,6 +1,5 @@
-<div>
-  <span>{{product.name}}</span>
-  <span>{{product.price | currency}}</span>
+<div class="list-item">
+  <p>{{product.name}}</p>
+  <p>{{product.price | currency}}</p>
   <button (click)="add(product.id)">Add to cart</button>
-  <button (click)="remove(product.id)">Remove</button>
 </div>

@@ -1,6 +1,6 @@
 <ng-container *ngIf="checkout$ | async as checkout">
   <div *ngFor="let item of checkout.products" class="cart-item">
-    <p>{{item.isImported ? '1 imported ' + item.name : item.name}}: {{+item.totalPrice | currency}}</p>
+    <p>1 {{item.isImported ? 'imported ' + item.name : item.name}}: {{+item.price | currency}}</p>
   </div>
 
   <p>Sales taxes: {{checkout.totalTax | currency}}</p>
