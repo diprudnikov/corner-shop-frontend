@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {Observable} from 'rxjs';
-import {ShoppingService} from '../../core/services/shopping.service';
-import {Checkout} from '../../core/interfaces/Checkout';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ShoppingService } from '../../core/services/shopping.service';
+import { Checkout } from '../../core/interfaces/Checkout';
 
 @Component({
   selector: 'app-checkout',
@@ -16,5 +16,9 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit() {
     this.checkout$ = this.shoppingService.getCartCheckout();
+  }
+
+  trackByFn(index, item) {
+    return index;
   }
 }

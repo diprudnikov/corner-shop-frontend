@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {ShoppingService} from '../core/services/shopping.service';
-import {Observable} from 'rxjs';
-import {Product} from '../core/interfaces/Product';
+import { Component, OnInit } from '@angular/core';
+import { ShoppingService } from '../core/services/shopping.service';
+import { Observable } from 'rxjs';
+import { Product } from '../core/interfaces/Product';
 
 @Component({
   selector: 'app-cart',
@@ -22,5 +22,9 @@ export class CartComponent implements OnInit {
     this.shoppingService.removeProductFromCart(itemId).subscribe(() => {
       this.cart$ = this.shoppingService.getCart();
     });
+  }
+
+  trackByFn(index, item) {
+    return index;
   }
 }

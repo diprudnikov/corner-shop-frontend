@@ -1,10 +1,10 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import {ShoppingListComponent} from './shopping-list/shopping-list.component';
-import {CartComponent} from './cart/cart.component';
-import {CheckoutComponent} from './cart/checkout/checkout.component';
-import {PageNotFoundComponent} from './core/components/page-not-found/page-not-found.component';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './cart/checkout/checkout.component';
+import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
   {path: 'products', component: ShoppingListComponent},

@@ -1,5 +1,5 @@
 <ng-container *ngIf="cart$ | async as cart">
-  <div *ngFor="let item of (cart$ | async)" class="cart-item">
+  <div *ngFor="let item of (cart$ | async); trackBy: trackByFn" class="cart-item">
     <p>1 {{item.isImported ? 'imported ' + item.name : item.name}}</p>
     <p>{{+item.price | currency}}</p>
     <button (click)="deleteFromCart(item.id)">Remove</button>
